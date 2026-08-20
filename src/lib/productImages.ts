@@ -32,16 +32,19 @@ const LOCAL_IMAGES: Record<string, string> = {
   "1000212779": a779.url,
   "1000212781": a781.url,
   "1000212783": a783.url,
-  "product-1.jpg": img1,
-  "product-2.jpg": img2,
-  "product-3.jpg": img3,
-  "product-4.jpg": img4,
-  "product-5.jpg": img5,
-  "product-6.jpg": img6,
-  "product-7.jpg": img7,
-  "product-8.jpg": img8,
-  "product-9.jpg": img9,
-  "product-10.jpg": img10,
+  // Legacy generic filenames from old admin rows — no bundled file exists for
+  // these, so they resolve to the placeholder instead of a broken import.
+  "product-1.jpg": placeholder,
+  "product-2.jpg": placeholder,
+  "product-3.jpg": placeholder,
+  "product-4.jpg": placeholder,
+  "product-5.jpg": placeholder,
+  "product-6.jpg": placeholder,
+  "product-7.jpg": placeholder,
+  "product-8.jpg": placeholder,
+  "product-9.jpg": placeholder,
+  "product-10.jpg": placeholder,
+
 };
 
 /**
