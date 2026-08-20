@@ -1,4 +1,4 @@
--- RUN THIS ONCE in the Supabase SQL editor of project pufjmaztcvuazhfiyanu.
+-- RUN THIS ONCE in the Supabase SQL editor of the live Supabase project.
 -- Payment hardening: verified-payment bookkeeping + tamper-proof payment fields.
 -- Additive and idempotent. No data is removed; the only dropped policy is the
 -- admin UPDATE policy, recreated immediately with an explicit WITH CHECK.

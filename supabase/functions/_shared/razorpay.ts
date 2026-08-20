@@ -103,23 +103,3 @@ export const captureRazorpayPayment = async (paymentId: string, amountPaise: num
     method?: string;
   };
 };
-
-/** Captures an authorized payment (accounts that do not auto-capture). */
-export const captureRazorpayPayment = async (paymentId: string, amountPaise: number) => {
-  const res = await fetch(
-    `https://api.razorpay.com/v1/payments/${encodeURIComponent(paymentId)}/capture`,
-    {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: "Basic " + btoa(`${RZP_KEY_ID}:${RZP_KEY_SECRET}`),
-      },
-      body: JSON.stringify({ amount: amountPaise, currency: "INR" }),
-    },
-  );
-  if (!res.ok) {
-    console.error("razorpay_payment_capture_failed", res.status);
-    throw new Error("capture_failed");
-  }
-  return await res.json();
-};
