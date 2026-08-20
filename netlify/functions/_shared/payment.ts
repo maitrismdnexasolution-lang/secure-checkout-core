@@ -39,8 +39,8 @@ const env = (name: string) => process.env[name]?.trim() ?? "";
  * the browser bundle, kept here as a runtime fallback because variables declared
  * in netlify.toml [build.environment] are build-time only. No secret lives here.
  */
-const PUBLIC_SUPABASE_URL = "https://pufjmaztcvuazhfiyanu.supabase.co";
-const PUBLIC_SUPABASE_ANON_KEY = "sb_publishable_LPzOa3zyvUOyUDHpoboHCw_46Qb6A9p";
+const PUBLIC_SUPABASE_URL = "https://oqxmqlbwiwdlvdmfpvmf.supabase.co";
+const PUBLIC_SUPABASE_ANON_KEY = "sb_publishable_U-v6O0G6WfCQCOzyBQxxdA_tHAiJGGt";
 
 
 export const getConfig = () => {

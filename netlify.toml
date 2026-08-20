@@ -8,9 +8,9 @@
   # Public (browser-safe) backend identifiers only.
   # Never add SUPABASE_SERVICE_ROLE_KEY or RAZORPAY_KEY_SECRET here — those are
   # server-only and must be set in the Netlify UI (Site settings → Environment).
-  VITE_SUPABASE_URL = "https://pufjmaztcvuazhfiyanu.supabase.co"
-  VITE_SUPABASE_PROJECT_ID = "pufjmaztcvuazhfiyanu"
-  VITE_SUPABASE_PUBLISHABLE_KEY = "sb_publishable_LPzOa3zyvUOyUDHpoboHCw_46Qb6A9p"
+  VITE_SUPABASE_URL = "https://oqxmqlbwiwdlvdmfpvmf.supabase.co"
+  VITE_SUPABASE_PROJECT_ID = "oqxmqlbwiwdlvdmfpvmf"
+  VITE_SUPABASE_PUBLISHABLE_KEY = "sb_publishable_U-v6O0G6WfCQCOzyBQxxdA_tHAiJGGt"
 
 
 
