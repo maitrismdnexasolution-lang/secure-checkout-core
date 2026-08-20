@@ -1,14 +1,4 @@
 import type { SyntheticEvent } from "react";
-import img1 from "@/assets/products/product-1.jpg";
-import img2 from "@/assets/products/product-2.jpg";
-import img3 from "@/assets/products/product-3.jpg";
-import img4 from "@/assets/products/product-4.jpg";
-import img5 from "@/assets/products/product-5.jpg";
-import img6 from "@/assets/products/product-6.jpg";
-import img7 from "@/assets/products/product-7.jpg";
-import img8 from "@/assets/products/product-8.jpg";
-import img9 from "@/assets/products/product-9.jpg";
-import img10 from "@/assets/products/product-10.jpg";
 
 // These catalog photos are already bundled in /public/assets/products, so they are
 // referenced with plain root-relative paths instead of the old broken CDN pointers.
@@ -23,7 +13,9 @@ const a779 = { url: "/assets/products/1000212779.jpg" };
 const a781 = { url: "/assets/products/1000212781.jpg" };
 const a783 = { url: "/assets/products/1000212783.jpg" };
 
-const placeholder = img1;
+// Bundled fallback used when a stored reference points at a missing/broken file.
+const placeholder = "/placeholder.svg";
+
 
 /**
  * Catalog images bundled with the app, keyed by the filename stored in the database.
