@@ -449,6 +449,7 @@ export type Database = {
           coupon_code: string | null
           courier_name: string | null
           created_at: string
+          currency: string
           customer_email: string | null
           customer_name: string
           customer_phone: string
@@ -464,6 +465,7 @@ export type Database = {
           payment_method: string | null
           payment_reference: string | null
           payment_status: string
+          payment_verified_at: string | null
           pincode: string | null
           razorpay_order_id: string | null
           shipping: number
@@ -477,6 +479,7 @@ export type Database = {
           transaction_id: string | null
           updated_at: string
           user_id: string | null
+          verification_status: string | null
         }
         Insert: {
           address: string
@@ -486,6 +489,7 @@ export type Database = {
           coupon_code?: string | null
           courier_name?: string | null
           created_at?: string
+          currency?: string
           customer_email?: string | null
           customer_name: string
           customer_phone: string
@@ -501,6 +505,7 @@ export type Database = {
           payment_method?: string | null
           payment_reference?: string | null
           payment_status?: string
+          payment_verified_at?: string | null
           pincode?: string | null
           razorpay_order_id?: string | null
           shipping?: number
@@ -514,6 +519,7 @@ export type Database = {
           transaction_id?: string | null
           updated_at?: string
           user_id?: string | null
+          verification_status?: string | null
         }
         Update: {
           address?: string
@@ -523,6 +529,7 @@ export type Database = {
           coupon_code?: string | null
           courier_name?: string | null
           created_at?: string
+          currency?: string
           customer_email?: string | null
           customer_name?: string
           customer_phone?: string
@@ -538,6 +545,7 @@ export type Database = {
           payment_method?: string | null
           payment_reference?: string | null
           payment_status?: string
+          payment_verified_at?: string | null
           pincode?: string | null
           razorpay_order_id?: string | null
           shipping?: number
@@ -551,6 +559,7 @@ export type Database = {
           transaction_id?: string | null
           updated_at?: string
           user_id?: string | null
+          verification_status?: string | null
         }
         Relationships: []
       }
@@ -893,6 +902,7 @@ export type Database = {
           coupon_code: string | null
           courier_name: string | null
           created_at: string
+          currency: string
           customer_email: string | null
           customer_name: string
           customer_phone: string
@@ -908,6 +918,7 @@ export type Database = {
           payment_method: string | null
           payment_reference: string | null
           payment_status: string
+          payment_verified_at: string | null
           pincode: string | null
           razorpay_order_id: string | null
           shipping: number
@@ -921,6 +932,7 @@ export type Database = {
           transaction_id: string | null
           updated_at: string
           user_id: string | null
+          verification_status: string | null
         }
         SetofOptions: {
           from: "*"
@@ -944,6 +956,7 @@ export type Database = {
           coupon_code: string | null
           courier_name: string | null
           created_at: string
+          currency: string
           customer_email: string | null
           customer_name: string
           customer_phone: string
@@ -959,6 +972,7 @@ export type Database = {
           payment_method: string | null
           payment_reference: string | null
           payment_status: string
+          payment_verified_at: string | null
           pincode: string | null
           razorpay_order_id: string | null
           shipping: number
@@ -972,6 +986,7 @@ export type Database = {
           transaction_id: string | null
           updated_at: string
           user_id: string | null
+          verification_status: string | null
         }
         SetofOptions: {
           from: "*"
