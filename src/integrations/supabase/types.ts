@@ -302,12 +302,152 @@ export type Database = {
         }
         Relationships: []
       }
+      order_admin_notes: {
+        Row: {
+          created_at: string
+          created_by: string | null
+          id: string
+          note: string
+          order_id: string
+        }
+        Insert: {
+          created_at?: string
+          created_by?: string | null
+          id?: string
+          note: string
+          order_id: string
+        }
+        Update: {
+          created_at?: string
+          created_by?: string | null
+          id?: string
+          note?: string
+          order_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "order_admin_notes_order_id_fkey"
+            columns: ["order_id"]
+            isOneToOne: false
+            referencedRelation: "orders"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      order_items: {
+        Row: {
+          created_at: string
+          id: string
+          order_id: string
+          price: number
+          product_id: string | null
+          product_image: string | null
+          product_name: string
+          quantity: number
+          subtotal: number
+          variant: string | null
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          order_id: string
+          price?: number
+          product_id?: string | null
+          product_image?: string | null
+          product_name: string
+          quantity?: number
+          subtotal?: number
+          variant?: string | null
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          order_id?: string
+          price?: number
+          product_id?: string | null
+          product_image?: string | null
+          product_name?: string
+          quantity?: number
+          subtotal?: number
+          variant?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "order_items_order_id_fkey"
+            columns: ["order_id"]
+            isOneToOne: false
+            referencedRelation: "orders"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      order_lookup_attempts: {
+        Row: {
+          attempted_at: string
+          fingerprint: string
+          id: number
+        }
+        Insert: {
+          attempted_at?: string
+          fingerprint: string
+          id?: number
+        }
+        Update: {
+          attempted_at?: string
+          fingerprint?: string
+          id?: number
+        }
+        Relationships: []
+      }
+      order_status_history: {
+        Row: {
+          changed_at: string
+          changed_by: string | null
+          changed_by_label: string | null
+          id: string
+          new_status: string
+          note: string | null
+          old_status: string | null
+          order_id: string
+        }
+        Insert: {
+          changed_at?: string
+          changed_by?: string | null
+          changed_by_label?: string | null
+          id?: string
+          new_status: string
+          note?: string | null
+          old_status?: string | null
+          order_id: string
+        }
+        Update: {
+          changed_at?: string
+          changed_by?: string | null
+          changed_by_label?: string | null
+          id?: string
+          new_status?: string
+          note?: string | null
+          old_status?: string | null
+          order_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "order_status_history_order_id_fkey"
+            columns: ["order_id"]
+            isOneToOne: false
+            referencedRelation: "orders"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       orders: {
         Row: {
           address: string
+          cancellation_reason: string | null
           city: string | null
           country: string | null
           coupon_code: string | null
+          courier_name: string | null
           created_at: string
           currency: string
           customer_email: string | null
@@ -315,6 +455,7 @@ export type Database = {
           customer_phone: string
           discount: number
           estimated_delivery: string | null
+          estimated_delivery_date: string | null
           id: string
           items: Json
           notes: string | null
@@ -322,15 +463,19 @@ export type Database = {
           paid_at: string | null
           payment_id: string | null
           payment_method: string | null
+          payment_reference: string | null
           payment_status: string
           payment_verified_at: string | null
           pincode: string | null
           razorpay_order_id: string | null
           shipping: number
+          shipping_note: string | null
           state: string | null
           status: string
           subtotal: number
           total: number
+          tracking_number: string | null
+          tracking_url: string | null
           transaction_id: string | null
           updated_at: string
           user_id: string | null
@@ -338,9 +483,11 @@ export type Database = {
         }
         Insert: {
           address: string
+          cancellation_reason?: string | null
           city?: string | null
           country?: string | null
           coupon_code?: string | null
+          courier_name?: string | null
           created_at?: string
           currency?: string
           customer_email?: string | null
@@ -348,6 +495,7 @@ export type Database = {
           customer_phone: string
           discount?: number
           estimated_delivery?: string | null
+          estimated_delivery_date?: string | null
           id?: string
           items: Json
           notes?: string | null
@@ -355,15 +503,19 @@ export type Database = {
           paid_at?: string | null
           payment_id?: string | null
           payment_method?: string | null
+          payment_reference?: string | null
           payment_status?: string
           payment_verified_at?: string | null
           pincode?: string | null
           razorpay_order_id?: string | null
           shipping?: number
+          shipping_note?: string | null
           state?: string | null
           status?: string
           subtotal: number
           total: number
+          tracking_number?: string | null
+          tracking_url?: string | null
           transaction_id?: string | null
           updated_at?: string
           user_id?: string | null
@@ -371,9 +523,11 @@ export type Database = {
         }
         Update: {
           address?: string
+          cancellation_reason?: string | null
           city?: string | null
           country?: string | null
           coupon_code?: string | null
+          courier_name?: string | null
           created_at?: string
           currency?: string
           customer_email?: string | null
@@ -381,6 +535,7 @@ export type Database = {
           customer_phone?: string
           discount?: number
           estimated_delivery?: string | null
+          estimated_delivery_date?: string | null
           id?: string
           items?: Json
           notes?: string | null
@@ -388,15 +543,19 @@ export type Database = {
           paid_at?: string | null
           payment_id?: string | null
           payment_method?: string | null
+          payment_reference?: string | null
           payment_status?: string
           payment_verified_at?: string | null
           pincode?: string | null
           razorpay_order_id?: string | null
           shipping?: number
+          shipping_note?: string | null
           state?: string | null
           status?: string
           subtotal?: number
           total?: number
+          tracking_number?: string | null
+          tracking_url?: string | null
           transaction_id?: string | null
           updated_at?: string
           user_id?: string | null
@@ -726,13 +885,131 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
+      admin_update_order_shipping: {
+        Args: {
+          p_courier_name?: string
+          p_estimated_delivery_date?: string
+          p_order_id: string
+          p_shipping_note?: string
+          p_tracking_number?: string
+          p_tracking_url?: string
+        }
+        Returns: {
+          address: string
+          cancellation_reason: string | null
+          city: string | null
+          country: string | null
+          coupon_code: string | null
+          courier_name: string | null
+          created_at: string
+          currency: string
+          customer_email: string | null
+          customer_name: string
+          customer_phone: string
+          discount: number
+          estimated_delivery: string | null
+          estimated_delivery_date: string | null
+          id: string
+          items: Json
+          notes: string | null
+          order_number: string | null
+          paid_at: string | null
+          payment_id: string | null
+          payment_method: string | null
+          payment_reference: string | null
+          payment_status: string
+          payment_verified_at: string | null
+          pincode: string | null
+          razorpay_order_id: string | null
+          shipping: number
+          shipping_note: string | null
+          state: string | null
+          status: string
+          subtotal: number
+          total: number
+          tracking_number: string | null
+          tracking_url: string | null
+          transaction_id: string | null
+          updated_at: string
+          user_id: string | null
+          verification_status: string | null
+        }
+        SetofOptions: {
+          from: "*"
+          to: "orders"
+          isOneToOne: true
+          isSetofReturn: false
+        }
+      }
+      admin_update_order_status: {
+        Args: {
+          p_cancellation_reason?: string
+          p_note?: string
+          p_order_id: string
+          p_status: string
+        }
+        Returns: {
+          address: string
+          cancellation_reason: string | null
+          city: string | null
+          country: string | null
+          coupon_code: string | null
+          courier_name: string | null
+          created_at: string
+          currency: string
+          customer_email: string | null
+          customer_name: string
+          customer_phone: string
+          discount: number
+          estimated_delivery: string | null
+          estimated_delivery_date: string | null
+          id: string
+          items: Json
+          notes: string | null
+          order_number: string | null
+          paid_at: string | null
+          payment_id: string | null
+          payment_method: string | null
+          payment_reference: string | null
+          payment_status: string
+          payment_verified_at: string | null
+          pincode: string | null
+          razorpay_order_id: string | null
+          shipping: number
+          shipping_note: string | null
+          state: string | null
+          status: string
+          subtotal: number
+          total: number
+          tracking_number: string | null
+          tracking_url: string | null
+          transaction_id: string | null
+          updated_at: string
+          user_id: string | null
+          verification_status: string | null
+        }
+        SetofOptions: {
+          from: "*"
+          to: "orders"
+          isOneToOne: true
+          isSetofReturn: false
+        }
+      }
       check_phone_exists: { Args: { p_phone: string }; Returns: boolean }
+      generate_order_number: { Args: never; Returns: string }
       has_role: {
         Args: {
           _role: Database["public"]["Enums"]["app_role"]
           _user_id: string
         }
         Returns: boolean
+      }
+      is_order_admin: { Args: { _uid?: string }; Returns: boolean }
+      normalize_order_status: { Args: { _status: string }; Returns: string }
+      order_status_rank: { Args: { _status: string }; Returns: number }
+      track_order: {
+        Args: { p_contact: string; p_order_number: string }
+        Returns: Json
       }
     }
     Enums: {
